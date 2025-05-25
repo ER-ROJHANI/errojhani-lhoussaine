@@ -1,0 +1,216 @@
+src/styles/global.css
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+}
+
+:root {
+  --primary-color: #0a0a0a;
+  --secondary-color: #1a1a1a;
+  --accent-color: #ecc8aef7;
+  --accent-hover: #ecc8aef7;
+  --text-color: #ffffff;
+  --text-secondary: #888888;
+  --spacing-unit: 0.5rem;
+  --max-width: 1200px;
+  --border-radius: 8px;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--primary-color);
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* SOLUTION: Supprimez ou modifiez cette classe */
+.app {
+  /* Option 1: Supprimer complètement ces lignes pour pleine largeur */
+  /* max-width: var(--max-width); */
+  /* margin: 0 auto; */
+  
+  /* Option 2: OU gardez juste le padding sans limitation de largeur */
+  width: 100%;
+  padding: 0 var(--spacing-unit);
+}
+
+/* Alternative: Classe pour contenu centré quand nécessaire */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-unit);
+}
+
+/* Alternative: Classe pour pleine largeur */
+.full-width {
+  width: 100%;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: var(--spacing-unit);
+  color: var(--text-color);
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+p {
+  margin-bottom: var(--spacing-unit);
+  color: var(--text-secondary);
+}
+
+/* Navigation styles */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+/* Section styles */
+section {
+  padding: calc(var(--spacing-unit) * 4) 0;
+  width: 100%;
+}
+
+/* Card styles */
+.card {
+  background-color: var(--secondary-color);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-unit);
+  transition: transform 0.2s ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+/* Button styles */
+.button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius);
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  border: 1px solid transparent;
+}
+
+.button:hover {
+  background-color: var(--accent-hover);
+  color: var(--primary-color);
+}
+
+/* Grid layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: calc(var(--spacing-unit) * 2);
+  width: 100%;
+}
+
+/* Project grid specific */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 1px;
+  width: 100%;
+}
+
+.project-item {
+  background-color: var(--secondary-color);
+  aspect-ratio: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-number {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-color);
+  opacity: 0.5;
+}
+
+/* Blog post styles */
+.blog-post {
+  background-color: var(--secondary-color);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.blog-post img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.blog-post-content {
+  padding: var(--spacing-unit);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  :root {
+    --spacing-unit: 0.75rem;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
