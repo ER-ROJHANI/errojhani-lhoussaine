@@ -25,7 +25,7 @@ const Header: React.FC = () => {
             <span className="tech-item">Symfony</span>
           </div> */}
           <img 
-            src="/Images/3D Developer.png" 
+            src="/Images/3D_Developer.png" 
             alt="3D Developer Illustration" 
             className="developer-image"
           />
