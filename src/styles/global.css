@@ -9,8 +9,8 @@ src/styles/global.css
 :root {
   --primary-color: #0a0a0a;
   --secondary-color: #1a1a1a;
-  --accent-color: #ecc8aef7;
-  --accent-hover: #ecc8aef7;
+  --accent-color: #f4af5f;
+  --accent-hover: #f4af5f;
   --text-color: #ffffff;
   --text-secondary: #888888;
   --spacing-unit: 0.5rem;
