@@ -14,7 +14,7 @@ const Projects: React.FC = () => {
   return (
     <section id="projects" className="projects-section">
       <div className="section-header">
-        <h2>Projects Showcase</h2>
+        <h2>My last work</h2>
         <p className="section-subtitle">Explore a variety of Projects tailored to Your Developer Portfolio</p>
       </div>
       

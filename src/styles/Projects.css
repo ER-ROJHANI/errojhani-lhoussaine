@@ -1,5 +1,5 @@
 .projects-section {
-  padding: calc(var(--spacing-unit) * 6) 0;
+  padding: calc(var(--spacing-unit) * 6) var(--spacing-unit);
   background-color: var(--primary-color);
   min-height: 100vh;
   display: flex;
@@ -20,25 +20,31 @@
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 1px;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 3rem; /* Espacement plus large entre les projets */
   width: 100%;
-  max-width: 100%;
+  max-width: 1400px; /* Largeur maximale augmentée */
+  margin: 0 auto; /* Centrage de la grille */
+  padding: 0 3rem; /* Marges latérales plus larges */
+  background: transparent !important; /* Suppression du background pour éviter les conflits */
 }
 
 .project-item {
   background-color: var(--secondary-color);
   aspect-ratio: 1;
   position: relative;
+  margin: 18px;
   overflow: hidden;
   cursor: pointer;
   transition: all 0.3s ease;
+  border-radius: 8px; /* Coins arrondis pour un look plus moderne */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Ombre subtile */
 }
 
 .project-item:hover {
   background-color: var(--accent-color);
+  transform: translateY(-8px); /* Effet de levée au hover */
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
 }
 
 .project-item:hover .project-number,
@@ -50,7 +56,7 @@
 .project-content {
   position: absolute;
   inset: 0;
-  padding: var(--spacing-unit);
+  padding: calc(var(--spacing-unit) * 1.5);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -84,10 +90,21 @@
   font-size: 1rem;
 }
 
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .projects-grid {
+    max-width: 1000px;
+    gap: 2.5rem;
+    padding: 0 2rem;
+  }
+}
+
 @media (max-width: 768px) {
   .projects-grid {
     grid-template-columns: repeat(2, 1fr);
-    width: 95%;
+    max-width: 700px;
+    gap: 2rem;
+    padding: 0 1.5rem;
   }
   
   .section-header {
@@ -97,19 +114,29 @@
   .project-number {
     font-size: 3rem;
   }
+
+  .projects-section {
+    padding: calc(var(--spacing-unit) * 4) calc(var(--spacing-unit) * 0.5);
+  }
 }
 
 @media (max-width: 480px) {
   .projects-grid {
     grid-template-columns: 1fr;
-    width: 100%;
+    max-width: 400px;
+    gap: 2rem;
+    padding: 0 1rem;
   }
   
   .project-item {
-    aspect-ratio: 3/4;
+    aspect-ratio: 4/3; /* Ratio moins carré sur mobile */
   }
 
   .project-number {
     font-size: 2.5rem;
   }
-} 
+
+  .projects-section {
+    padding: calc(var(--spacing-unit) * 3) var(--spacing-unit);
+  }
+}
