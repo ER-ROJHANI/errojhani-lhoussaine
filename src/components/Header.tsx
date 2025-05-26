@@ -6,12 +6,12 @@ const Header: React.FC = () => {
     <header className="header fade-in">
       <div className="header-content">
         <div className="header-text">
-          <h1>Showcase Your<br />Skills with a<br />Minimalist</h1>
+          <h1>Crafting Digital Experiences with Precision</h1>
           <p className="header-description">
-            Welcome to DevPortfolio, where we highlight projects in Flutter,
-            Angular, Symfony, and Laravel. Our elegant dark theme with
-            black and beige colors creates a professional showcase for
-            your skills in web and app development.
+            A minimalist portfolio designed to let your work speak for itself.
+           The elegant dark theme, with its timeless black and beige palette, 
+           reflects a commitment to clean, 
+           impactful design and seamless functionality—whether for web, mobile, or beyond.
           </p>
           <div className="header-cta">
             <a href="#projects" className="button">View Projects</a>
