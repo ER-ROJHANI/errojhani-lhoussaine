@@ -13,7 +13,6 @@ function App() {
       <Navigation />
       <Header />
       <Projects />
-      <Blog />
       <Footer />
       <SocialBar />
     </div>
