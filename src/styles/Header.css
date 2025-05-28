@@ -4,9 +4,10 @@
   align-items: center;
   background: var(--primary-color);
   color: white;
-  padding: 2rem;
+  padding: 2rem 1rem;
   position: relative;
   overflow: hidden;
+  width: 100%;
 }
 
 .header::before {
@@ -22,17 +23,19 @@
 
 .header-content {
   width: 100%;
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 4rem;
+  gap: 2rem;
+  padding: 0 1rem;
 }
 
 .header-text {
   flex: 1;
   max-width: 600px;
+  width: 100%;
 }
 
 .header h1 {
@@ -109,41 +112,78 @@
 
 @media (max-width: 1024px) {
   .header h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
   
   .header-content {
-    gap: 2rem;
+    gap: 1.5rem;
+  }
+
+  .header-description {
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 768px) {
+  .header {
+    padding: 1rem;
+    min-height: auto;
+    padding-top: 6rem;
+    padding-bottom: 3rem;
+  }
+
   .header-content {
     flex-direction: column;
     text-align: center;
+    gap: 2rem;
   }
 
   .header-text {
     max-width: 100%;
+    order: 2;
+  }
+
+  .header-image {
+    order: 1;
+    margin-bottom: 1rem;
   }
 
   .header-cta {
     justify-content: center;
+    flex-wrap: wrap;
   }
 
   .header h1 {
-    font-size: 2.5rem;
-  }
-
-  .tech-stack {
-    position: static;
-    flex-direction: row;
-    justify-content: center;
-    margin-bottom: 2rem;
-    transform: none;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
   }
 
   .developer-image {
-    max-width: 300px;
+    max-width: 250px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 1.8rem;
+  }
+
+  .header-description {
+    font-size: 0.9rem;
+  }
+
+  .developer-image {
+    max-width: 200px;
+  }
+
+  .header-cta {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .header-cta .button {
+    width: 100%;
+    text-align: center;
   }
 } 
