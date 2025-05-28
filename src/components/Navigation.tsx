@@ -17,7 +17,9 @@ const Navigation: React.FC = () => {
     <nav className={`navigation ${isScrolled ? 'scrolled' : ''}`}>
       <div className="nav-content">
         <div className="nav-logo">
-          <a href="#top">Portfolio</a>
+          <a href="#top">
+            <img src="/Images/LOGO.png" alt="Logo" className="logo-image" />
+          </a>
         </div>
         <div className="nav-links">
           <a href="#about">About</a>

@@ -76,6 +76,12 @@
   width: 100%;
 }
 
+.logo-image {
+  height: 76px;
+  width: auto;
+  display: block;
+}
+
 @media (max-width: 768px) {
   .navigation {
     padding: 1rem;
@@ -94,5 +100,9 @@
     gap: 1rem;
     flex-wrap: wrap;
     justify-content: center;
+  }
+
+  .logo-image {
+    height: 50px;
   }
 } 
