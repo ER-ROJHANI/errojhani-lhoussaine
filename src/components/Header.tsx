@@ -8,10 +8,10 @@ const Header: React.FC = () => {
         <div className="header-text">
           <h1>Crafting Digital Experiences with Precision</h1>
           <p className="header-description">
-            A minimalist portfolio designed to let your work speak for itself.
-           The elegant dark theme, with its timeless black and beige palette, 
-           reflects a commitment to clean, 
-           impactful design and seamless functionality—whether for web, mobile, or beyond.
+            Crafting digital experiences through elegant code and thoughtful design.
+            Specializing in modern web solutions that combine aesthetic refinement
+            with technical excellence. From concept to deployment,
+            I transform ideas into seamless, user-centric applications.
           </p>
           <div className="header-cta">
             <a href="#projects" className="button">View Projects</a>
