@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/Projects.css';
 
 const Projects: React.FC = () => {
@@ -6,42 +7,46 @@ const Projects: React.FC = () => {
     {
       title: "Orange Maroc",
       category: "Web Development",
-      description: "Développement et maintenance de la plateforme e-commerce d'Orange Maroc. Optimisation des performances et amélioration de l'expérience utilisateur.",
+      description: "Development and maintenance of Orange Morocco's e-commerce platform. Performance optimization and user experience improvement.",
       image: "/Images/Orange Logo.png",
       link: "https://www.orange.ma/",
-      className: "orange-project"
-    },
-    {
-      title: "Tiktak Vendeur",
-      category: "Mobile Development",
-      description: "Application mobile permettant aux commerçants de gérer leurs commandes, leur catalogue de produits et suivre les livraisons en temps réel. Intégration de fonctionnalités de gestion de stock et d'analyses des ventes.",
-      image: "/Images/tiktak-vendor.png",
-      tech: "React Native, Redux",
-      link: "#"
+      className: "orange-project full-image"
     },
     {
       title: "Tiktak Client",
       category: "Mobile Development",
-      description: "Application mobile intuitive permettant aux clients de découvrir et commander auprès de multiples vendeurs locaux. Système de paiement sécurisé et suivi des livraisons en temps réel.",
+      description: "Intuitive mobile application enabling customers to discover and order from multiple local vendors. Secure payment system and real-time delivery tracking.",
       image: "/Images/tiktak-client.png",
       tech: "React Native, Redux",
-      link: "#"
+      link: "https://play.google.com/store/apps/details?id=ma.tiktak.user"
     },
     {
-      title: "Tiktak Livreur",
+      title: "Tiktak Delivery",
       category: "Mobile Development",
-      description: "Application mobile pour les livreurs avec système avancé de géolocalisation, optimisation des itinéraires et gestion intelligente des livraisons multiples.",
+      description: "Mobile application for delivery drivers with advanced geolocation system, route optimization, and intelligent multiple delivery management.",
       image: "/Images/tiktak-delivery.png",
       tech: "React Native, Maps API",
-      link: "#"
+      link: "https://play.google.com/store/apps/details?id=ma.tiktak.delivery"
+    },
+    {
+      title: "Tiktak Vendor",
+      category: "Mobile Development",
+      description: "Mobile application allowing merchants to manage their orders, product catalog, and track deliveries in real-time. Integration of inventory management features and sales analytics.",
+      image: "/Images/tiktak-vendor.png",
+      tech: "React Native, Redux",
+      link: "https://play.google.com/store/apps/details?id=ma.tiktak.vendor"
     },
     {
       title: "Tiktak Dashboard",
       category: "Web Development",
-      description: "Interface d'administration complète permettant la gestion de l'écosystème Tiktak, incluant analyses, rapports et outils de gestion des utilisateurs.",
+      description: "Comprehensive administration interface for managing the Tiktak ecosystem, including analytics, reports, and user management tools.",
       image: "/Images/tiktak-dashboard.png",
-      tech: "React, Material-UI",
-      link: "#"
+      tech: "Laravel",
+      link: "/dashboard-details",
+      className: "dashboard-project",
+      techLogos: [
+        "/Images/laravel-logo.png"
+      ]
     }
   ];
 
@@ -53,9 +58,17 @@ const Projects: React.FC = () => {
       
       <div className="projects-grid">
         {projects.map((project, index) => (
-          <div key={index} className="project-item">
+          <div key={index} className={`project-item ${project.className || ''}`}>
             <div className="project-image">
-              <img src={project.image} alt={project.title} />
+              {project.techLogos ? (
+                <div className="tech-logos">
+                  {project.techLogos.map((logo, i) => (
+                    <img key={i} src={logo} alt={`Technology ${i + 1}`} className="tech-logo" />
+                  ))}
+                </div>
+              ) : (
+                <img src={project.image} alt={project.title} />
+              )}
             </div>
             <div className="project-content">
               <div className="project-info">
@@ -64,13 +77,23 @@ const Projects: React.FC = () => {
                 <p className="project-description">{project.description}</p>
 
                 {project.link && (
-                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link">
-                    Voir le projet
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <line x1="5" y1="12" x2="19" y2="12"></line>
-                      <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                  </a>
+                  project.link.startsWith('http') ? (
+                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link">
+                      View project
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                      </svg>
+                    </a>
+                  ) : (
+                    <Link to={project.link} className="project-link">
+                      Details
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                      </svg>
+                    </Link>
+                  )
                 )}
               </div>
             </div>

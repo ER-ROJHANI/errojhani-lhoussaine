@@ -1,22 +1,30 @@
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
-import Showcase from './components/Showcase';
-import Projects from './components/Projects';
-import Blog from './components/Blog';
-import Navigation from './components/Navigation';
+import Home from './components/Home';
+import DashboardDetails from './components/DashboardDetails';
 import Footer from './components/Footer';
+import Navigation from './components/Navigation';
 import SocialBar from './components/SocialBar';
 import './styles/global.css';
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="app">
-      <Navigation />
-      <Header />
-      <Projects />
-      <Footer />
-      <SocialBar />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={
+          <div className="app">
+            <Navigation />
+            <Header />
+            <Home />
+            <Footer />
+            <SocialBar />
+          </div>
+        } />
+        <Route path="/dashboard-details" element={<DashboardDetails />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
