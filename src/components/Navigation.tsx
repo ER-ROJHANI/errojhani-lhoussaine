@@ -22,10 +22,18 @@ const Navigation: React.FC = () => {
           </a>
         </div>
         <div className="nav-links">
+          <a href="#top">Home</a>
           <a href="#about">About</a>
           <a href="#projects">Projects</a>
-          <a href="#blog">Blog</a>
-          <a href="#contact">Contact</a>
+          {/* <a href="#contact">Contact</a> */}
+          <a
+            href="/Er-rojhani L'houssaine Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            download
+          >
+            Resume
+          </a>
         </div>
       </div>
     </nav>
