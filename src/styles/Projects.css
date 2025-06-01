@@ -174,47 +174,86 @@ img[src*="tiktak-vendor"] {
 }
 
 @media (max-width: 768px) {
+  .projects-section {
+    padding: calc(var(--spacing-unit) * 3) var(--spacing-unit);
+  }
+
   .projects-grid {
-    grid-template-columns: 1fr;
-    max-width: 600px;
+    grid-template-columns: 1fr !important;
+    max-width: 100%;
     gap: 2rem;
-    padding: 0 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .project-item {
+    aspect-ratio: 16/10;
+    margin-bottom: 1rem;
   }
 
   .project-content {
     opacity: 1;
     background: linear-gradient(
       to top,
-      rgba(0, 0, 0, 0.9) 0%,
-      rgba(0, 0, 0, 0.7) 60%,
-      rgba(0, 0, 0, 0.3) 100%
+      rgba(0, 0, 0, 0.95) 0%,
+      rgba(0, 0, 0, 0.8) 50%,
+      rgba(0, 0, 0, 0.5) 100%
     );
+    padding: 1.5rem;
   }
 
   .project-info {
     transform: translateY(0);
   }
 
-  .project-number {
-    font-size: 2rem;
+  .project-info h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .project-description {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    display: -webkit-box;
+  }
+
+  .project-category {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .project-link {
+    padding: 0.5rem 0;
   }
 }
 
 @media (max-width: 480px) {
+  .projects-section {
+    padding: calc(var(--spacing-unit) * 2) var(--spacing-unit);
+  }
+
   .projects-grid {
-    padding: 0 1rem;
+    gap: 1.5rem;
+    padding: 0 0.5rem;
+  }
+
+  .project-item {
+    aspect-ratio: 16/12;
   }
 
   .project-content {
-    padding: 1.5rem;
+    padding: 1.25rem;
   }
 
   .project-info h3 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   .project-description {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
+    -webkit-line-clamp: 2;
   }
 }
 
