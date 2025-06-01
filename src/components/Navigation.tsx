@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/Navigation.css';
 
 const Navigation: React.FC = () => {
@@ -17,14 +18,14 @@ const Navigation: React.FC = () => {
     <nav className={`navigation ${isScrolled ? 'scrolled' : ''}`}>
       <div className="nav-content">
         <div className="nav-logo">
-          <a href="#top">
+          <Link to="/">
             <img src="/Images/LOGO.png" alt="Logo" className="logo-image" />
-          </a>
+          </Link>
         </div>
         <div className="nav-links">
-          <a href="#top">Home</a>
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+          <Link to="/#projects">Projects</Link>
           {/* <a href="#contact">Contact</a> */}
           <a
             href="/Er-rojhani L'houssaine Resume.pdf"

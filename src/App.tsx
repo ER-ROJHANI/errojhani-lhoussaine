@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './components/Home';
+import About from './components/About';
 import DashboardDetails from './components/DashboardDetails';
 import Footer from './components/Footer';
 import Navigation from './components/Navigation';
@@ -22,6 +23,14 @@ const App: React.FC = () => {
           </div>
         } />
         <Route path="/dashboard-details" element={<DashboardDetails />} />
+        <Route path="/about" element={
+          <div className="app">
+            <Navigation />
+            <About />
+            <Footer />
+            <SocialBar />
+          </div>
+        } />
       </Routes>
     </Router>
   );
