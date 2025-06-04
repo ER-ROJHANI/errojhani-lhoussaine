@@ -5,6 +5,15 @@ import '../styles/Projects.css';
 const Projects: React.FC = () => {
   const projects = [
     {
+      title: "Maxit",
+      category: "Mobile Development",
+      description: "Contribution to Orange's official mobile application backend development and mobile features. Implemented push notifications system and backend services for real-time alerts, bill reminders, and promotional offers. Enhanced user engagement through timely notifications for balance updates and service management.",
+      image: "/Images/maxit.png",
+      tech: "Flutter, Frebase, Dart, Symfony",
+      link: "https://www.orange.ma/Maxit",
+      className: "orange-project full-image"
+    },
+    {
       title: "Orange Maroc",
       category: "Web Development",
       description: "Development and maintenance of Orange Morocco's e-commerce platform. Performance optimization and user experience improvement.",
